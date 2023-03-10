@@ -64,3 +64,25 @@
  *
  * Columns: book_name, total_value (Ordered Descending)
  */
+
+
+/**
+ * Report 8
+ * Could you describe what this report query shows and rewrite it without using the 'NOT EXISTS' keywords
+ *
+ * Columns: book_id, name (Ordered by name ascending)
+ */
+SELECT
+	book_id
+	, name
+FROM
+	t_book AS b
+WHERE
+	NOT EXISTS (
+		SELECT
+			*
+		FROM
+			t_bestseller AS be
+		WHERE
+			be.book_id = b.book_id
+	);

@@ -452,3 +452,25 @@
 		, 2
 		, NULL
 	);
+
+-- Bestsellers
+	DROP TABLE IF EXISTS t_bestseller;
+
+	CREATE TABLE t_bestseller (
+		bestseller_id SERIAL
+		, book_id INTEGER
+		, quantity_sold INTEGER
+	);
+
+	INSERT INTO t_bestseller (
+		book_id
+		, quantity_sold
+	)
+	VALUES (
+		5
+		, 3
+	),
+	(
+		6
+		, 3
+	);
